@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fixed Header Modal</title>
+    <style>
+     body {
+         background: blue;
+         overflow: hidden;
+         height: 2000px;
+     }
+        .modal-parent{
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 500;
+        }
+
+        .modal-container {
+            position: absolute;
+            display: block;
+            top: 67px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 200;
+        }
+        .modal-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0;
+            z-index: 200;
+        }
+
+
+        .modal-header-container {
+            height: 67px;
+            background: #383838;
+            background: rgba(30, 30, 30, 0.85);
+            position: relative;
+            z-index: 200;
+           /* border-bottom: 1px solid #181818;*/
+
+        }
+
+        .modal-header-content {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1024px;
+            position: relative;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        #reading-header {
+            position: absolute;
+            border-bottom: 1px solid #181818;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 900;
+            background: #383838;
+            height: 67px;
+        }
+
+        .reading-header-button {
+            position: absolute;
+            width: 80px;
+            height: 67px;
+            border: 0;
+            color: #FFF;
+            text-align: center;
+            border-right: 1px solid #484848;
+            border-left: 1px solid #484848;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin-left: -1px;
+            margin-right: 1px;
+            background: #383838;
+            z-index: 1;
+        }
+
+        .prev-button {
+            right: 109px;
+            width: 110px;
+        }
+
+     #prev_article_button i, #next_article_button i {
+         top: 50%;
+         left: 50%;
+         margin: -13px 0 0 -8px;
+     }
+        #next_article_button {
+            right: -1px;
+            width: 110px;
+            border-left: 0;
+        }
+        .topbar_title, .topbar_title h2 {
+            display: block;
+            font-size: 16px;
+            font-weight: normal;
+            color: #FFF;
+            text-align: left;
+            text-shadow: none;
+            position: absolute;
+            left: 100px;
+            right: 220px;
+            top: 22px;
+            font-weight: 600;
+        }
+
+        #reading-ui {
+            position: absolute;
+            left: 0;
+            top: 67px;
+            bottom: 0;
+            z-index: 400;
+        }
+
+        div#article-navigation-bar {
+            z-index: 3;
+            width: 78px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: #F5F5F5;
+            overflow: hidden;
+        }
+
+
+        .icon-linkedin.light {
+            background-position: -10px -1574px;
+            width: 20px;
+            height: 19px;
+        }
+        [class^="icon-"], [class*=" icon-"] {
+            background-image: url(https://www.pulse.me/media/images/reader_sprite-6f3d6f50c52fced8a988a664110ee1a0b03e27a0.png);
+        }
+        .icon-closethin.white {
+            background-position: -10px -784px;
+            width: 25px;
+            height: 25px;
+        }
+        #back_button i {
+            margin: -13px 0 0 -13px;
+            top: 50%;
+            left: 50%;
+            font-size: 30px;
+            padding-top: 14px;
+            padding-left: 1px;
+            cursor: pointer;
+        }
+
+        .reading-header-button i {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 30px;
+            padding-top: 14px;
+            padding-left: 1px;
+        }
+        .icon-leftthin.white {
+            background-position: -10px -649px;
+            width: 15px;
+            height: 25px;
+        }
+        .icon-rightthin.white {
+            background-position: -10px -514px;
+            width: 14px;
+            height: 25px;
+        }
+        #next_article_button {
+            right: -1px;
+            width: 110px;
+            border-left: 0;
+        }
+        #next_article_button i {
+            padding-left: 4px;
+        }
+
+        #reading-modal-clickoff {
+            top: 67px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(30, 30, 30, 0.85);
+            z-index: 200;
+        }
+
+        #reading-frames-content {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow: hidden;
+            z-index: 300;
+        }
+
+        #reading-frames {
+            position: absolute;
+            left: 78px;
+
+            overflow-x: hidden;
+            overflow: auto;
+            right: 0;
+            height: 100%;
+            background: #FFF;
+        }
+
+     .topbar_title, .topbar_title h2 {
+         display: block;
+         font-size: 16px;
+         font-weight: normal;
+         color: #FFF;
+         text-align: left;
+         text-shadow: none;
+         position: absolute;
+         left: 100px;
+         right: 220px;
+         top: 22px;
+         font-weight: 600;
+         padding: 0;
+         margin: 0;
+
+     }
+        @media screen and (max-width: 640px) {
+            div#article-navigation-bar, div#article-navigation-bar {
+                position: fixed;
+                top: auto;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 55px;
+                border: 0;
+        }
+     }
+     @media screen and (max-width: 640px)  {
+          ul#reading_view_share, ul#reading_view_share {
+             width: 100%;
+         }
+     }
+     @media screen and (max-width: 640px){
+         #reading-modal-clickoff, #reading-ui {
+             bottom: 0;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         #reading-modal-clickoff, #reading-ui {
+             top: 55px;
+             bottom: 55px;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         #back_button {
+             left: 0;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         #back_button i, .reading-header-button i {
+             font-size: 29px;
+         }
+     }
+     @media screen and (max-width: 640px){
+         #prev_article_button {
+             left: 33%;
+             width: 34%;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         #back_button, #prev_article_button, #next_article_button {
+             width: 33%;
+             margin: 0;
+             border: 0;
+             border-right: 1px solid #484848;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         .modal-header-container, #reading-header, .reading-header-button {
+             height: 55px;
+         }
+     }
+     @media screen and (max-width: 640px)  {
+         #reading-frames {
+             left: 0;
+             top: 0;
+             bottom: 55px;
+             right: 0;
+             height: auto;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         #reading-modal-clickoff, #reading-ui {
+             bottom: 0;
+         }
+     }
+     @media screen and (max-width: 640px) {
+         #reading-modal-clickoff, #reading-ui {
+             top: 55px;
+             bottom: 55px;
+         }
+     }
+    @media screen and (max-width: 640px) {
+        #back_button, #prev_article_button, #next_article_button {
+            width: 33%;
+            margin: 0;
+            border: 0;
+            border-right: 1px solid #484848;
+        }
+    }
+    </style>
+</head>
+<body>
+<div class="modal-parent" >
+
+    <div  class="modal-header-container">
+        <div class="modal-header-content">
+            <div id="reading-header">
+                <div id="back_button" class="reading-header-button">
+                    <i class="icon-closethin white"></i>
+                </div>
+                <div id="prev_article_button" class="reading-header-button prev-button">
+                    <i class="icon-leftthin white"></i>
+                </div>
+                <div id="next_article_button" class="reading-header-button">
+                    <i class="icon-rightthin white"></i>
+                </div>
+                <h2 class="topbar_title">
+          <span id="source-title" class="ellipsis" style="left:0;">
+            Popular Science
+          </span>
+                </h2>
+                <div class="reading-shadow-left">
+                </div>
+                <div class="reading-shadow-right">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="reading-ui" style="left: 288px;">
+        <div id="article-navigation-bar" class="border-box abs">
+
+        </div>
+        <div id="draglist-shadow">
+        </div>
+        <div id="draglist">
+            <div id="rightlist">
+                <div id="rightlist-wrapper">
+                    <div id="rightlist-content" class="reading-list-items">
+                    </div>
+                    <div id="rightlist-overlay">
+                    </div>
+                </div>
+            </div>
+            <div id="leftlist">
+                <div id="leftlist-wrapper">
+                    <div id="leftlist-content" class="reading-list-items">
+                    </div>
+                    <div id="leftlist-overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="reading-modal-clickoff" class="modal-container">
+        <div id="reading-frames-content" class="modal-content">
+            <div id="reading-frames">
+               Content Goes here
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

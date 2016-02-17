@@ -1,0 +1,212 @@
+<div class="fluid-container clearfix" data-ng-controller="EventsController">
+
+    <!-- widget grid -->
+    <section class="" id="widget-grid">
+
+        <!-- row-fluid -->
+        <div class="row clearfix" >
+            <article class="span8">
+                <img style="position: absolute;margin-left: 92px;margin-top: 15px;" src="img/sidebar.png">
+                <div style=" padding-left:100px" class="inner-spacer">
+                    <div style="padding-left:80px;">
+
+                        <h3>Add Your Event Details</h3>
+                    </div>
+                    <!-- content goes here -->
+                    <form class="form-horizontal themed" data-ng-submit="create()">
+                        <fieldset>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">Title</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" data-ng-model="title" id="input01">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input02">When</label>
+                                <div class="controls">
+                                    <input type="text" class="span12" data-ng-model="When" id="input02">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input03">Where</label>
+                                <div class="controls">
+                                    <label class="control-label" for="input02">Venue Name</label>
+                                    <input type="text" class="span12" data-ng-model="venue" id="input03">
+                                </div>
+                                <div class="controls">
+                                    <label class="control-label" for="input02">Location</label>
+                                    <input type="text" class="span12" data-ng-model="location" id="input04">
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Description</label>
+                                <div class="controls wysihtml5-widget">
+                                    <!-- content -->
+                                    <ul class="wysihtml5-toolbar" style=""><li class="dropdown"><a href="#" data-toggle="dropdown" class="btn dropdown-toggle btn-small"><i class="icon-font"></i>&nbsp;<span class="current-font">Normal text</span>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu"><li><a data-wysihtml5-command-value="div" data-wysihtml5-command="formatBlock" href="javascript:;" unselectable="on">Normal text</a></li><li><a data-wysihtml5-command-value="h1" data-wysihtml5-command="formatBlock" href="javascript:;" unselectable="on">Heading 1</a></li><li><a data-wysihtml5-command-value="h2" data-wysihtml5-command="formatBlock" href="javascript:;" unselectable="on">Heading 2</a></li><li><a data-wysihtml5-command-value="h3" data-wysihtml5-command="formatBlock" href="javascript:;" unselectable="on">Heading 3</a></li></ul></li><li class="dropdown"><a href="#" data-toggle="dropdown" class="btn dropdown-toggle btn-small"><i class="cus-color-swatch-2"></i><span class="current-color">Black</span>&nbsp;<b class="caret"></b></a><ul class="dropdown-menu"><li><div data-wysihtml5-command-value="black" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="black" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Black</a></li><li><div data-wysihtml5-command-value="silver" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="silver" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Silver</a></li><li><div data-wysihtml5-command-value="gray" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="gray" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Grey</a></li><li><div data-wysihtml5-command-value="maroon" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="maroon" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Maroon</a></li><li><div data-wysihtml5-command-value="red" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="red" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Red</a></li><li><div data-wysihtml5-command-value="purple" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="purple" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Purple</a></li><li><div data-wysihtml5-command-value="green" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="green" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Green</a></li><li><div data-wysihtml5-command-value="olive" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="olive" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Olive</a></li><li><div data-wysihtml5-command-value="navy" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="navy" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Navy</a></li><li><div data-wysihtml5-command-value="blue" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="blue" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Blue</a></li><li><div data-wysihtml5-command-value="orange" class="wysihtml5-colors"></div><a data-wysihtml5-command-value="orange" data-wysihtml5-command="foreColor" class="wysihtml5-colors-title" href="javascript:;" unselectable="on">Orange</a></li></ul></li><li><div class="btn-group"><a title="CTRL+B" data-wysihtml5-command="bold" class="btn btn-small" href="javascript:;" unselectable="on">B</a><a title="CTRL+I" data-wysihtml5-command="italic" class="btn btn-small" href="javascript:;" unselectable="on">I</a><a title="CTRL+U" data-wysihtml5-command="underline" class="btn btn-small" href="javascript:;" unselectable="on">U</a></div></li><li><div class="btn-group"><a title="Unordered list" data-wysihtml5-command="insertUnorderedList" class="btn btn-small" href="javascript:;" unselectable="on"><i class="icon-list"></i></a><a title="Ordered list" data-wysihtml5-command="insertOrderedList" class="btn btn-small" href="javascript:;" unselectable="on"><i class="icon-th-list"></i></a><a title="Outdent" data-wysihtml5-command="Outdent" class="btn btn-small" href="javascript:;" unselectable="on"><i class="icon-indent-right"></i></a><a title="Indent" data-wysihtml5-command="Indent" class="btn btn-small" href="javascript:;" unselectable="on"><i class="icon-indent-left"></i></a></div></li><li><div class="bootstrap-wysihtml5-insert-link-modal modal hide fade"><div class="modal-header"><a data-dismiss="modal" class="close">×</a><h3>Insert link</h3></div><div class="modal-body"><input class="bootstrap-wysihtml5-insert-link-url input-xlarge" value="http://"></div><div class="modal-footer"><a data-dismiss="modal" class="btn btn-small" href="#">Cancel</a><a data-dismiss="modal" class="btn btn-primary btn-small" href="#">Insert link</a></div></div><a title="Insert link" data-wysihtml5-command="createLink" class="btn btn-small" href="javascript:;" unselectable="on"><i class="cus-application-link"></i></a></li><li><div class="bootstrap-wysihtml5-insert-image-modal modal hide fade"><div class="modal-header"><a data-dismiss="modal" class="close">×</a><h3>Insert image</h3></div><div class="modal-body"><input class="bootstrap-wysihtml5-insert-image-url input-xlarge" value="http://"></div><div class="modal-footer"><a data-dismiss="modal" class="btn btn-small" href="#">Cancel</a><a data-dismiss="modal" class="btn btn-primary btn-small" href="#">Insert image</a></div></div><a title="Insert image" data-wysihtml5-command="insertImage" class="btn btn-small" href="javascript:;" unselectable="on"><i class="cus-picture"></i></a></li></ul><textarea style="width: 100%; height: 250px; display: none;" id="wysihtml5" class="uniform" placeholder="Enter text ..."></textarea><input type="hidden" name="_wysihtml5_mode" value="1"><iframe width="0" height="0" frameborder="0" class="wysihtml5-sandbox" security="restricted" allowtransparency="true" marginwidth="0" marginheight="0" style="background-color: rgb(255, 255, 255); border-collapse: separate; border-color: rgb(204, 204, 204); border-style: solid; border-width: 1px; clear: none; display: inline-block; float: none; margin: 0px; outline: 0px none rgb(119, 119, 119); outline-offset: 0px; padding: 4px 6px; position: static; z-index: auto; vertical-align: middle; text-align: left; -moz-box-sizing: content-box; box-shadow: none; border-radius: 0px 0px 0px 0px; width: 100%; height: 250px; top: auto; left: auto; right: auto; bottom: auto;"></iframe>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+
+                                <label class="control-label">Date &amp; Time</label>
+                                <div class="controls">
+                                    <div class="control-group input-append">
+                                        <label for="inputDatepicker" class="label" style="margin-right:6px;">date</label>
+                                        <input id="inputDatepicker" class="input-small" type="text" ng-model="datepicker.date" data-date-format="dd/mm/yyyy" bs-datepicker>
+                                        <button type="button" class="btn" data-toggle="datepicker"><i class="icon-calendar"></i></button>
+                                    </div>
+                                    <div style="width:140px;float:left;" class="input-append date" id="datepicker-js" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                        <input type="text" class="datepicker-input" size="16" value="12-02-2012" placeholder="Select a date">
+                                        <span class="add-on"><i class="cus-calendar-2"></i></span>
+                                    </div>
+                                    <div class="space"></div>
+                                    <div style="width:120px;float:left;" class="input-append bootstrap-timepicker-component">
+                                        <input type="text" id="timepicker1" class="timepicker-input" value="05:30 PM">
+                                        <span class="add-on"><i class="cus-clock"></i></span>
+                                    </div>
+                                    <div class="space"></div>
+                                    <div style="width:120px;float:left;" class="input-append bootstrap-timepicker-component">
+                                        <input type="text" id="timepicker2" class="timepicker-input" value="17:33:45">
+                                        <span class="add-on"><i class="cus-clock"></i></span>
+                                    </div>
+                                    <div class="space"></div>
+                                    <div style="width:140px;float:left;" class="input-append date" id="datepicker-js-2" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                                        <input type="text" class="datepicker-input" size="16" value="12-02-2012" readonly="">
+                                        <span class="add-on"><i class="cus-calendar-2"></i></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input02">Upload Image</label>
+                                <div class="controls">
+                                    <input type="text" accept="image/*" image="image"/>
+                                    <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" />
+                                    <span class="btn medium btn-blue" style="margin-right:10px;">Browse
+                                    <input id="fileupload" type="file" name="file" accept="video/mp4" data-url="uploadVideo" style="display:none;">
+                                    </span>
+                                    <button type="submit" ng-click="single(image)" class="btn medium btn-gray">Upload</button>
+                                </div>
+                            </div>
+                            <div class="control-group" id="timepicker-demo">
+                                <label class="control-label">Support needed</label>
+                                <div class="controls">
+                                    <label style="padding-left:0px !important;float:left;padding-top:0px;" class="checkbox">
+                                        <div class="checker" id="uniform-optionsCheckbox-1"><span><input type="checkbox" id="optionsCheckbox-1" value="option5"></span></div>
+                                        WPR
+                                    </label>
+                                    <label style="padding-left:0px !important;float:left;padding-top:0px;" class="checkbox">
+                                        <span><div class="checker" id="uniform-optionsCheckbox-2"><span><input type="checkbox" id="optionsCheckbox-2" value="option5"></span></div></span>
+                                        Security
+                                    </label>
+                                    <label style="padding-left:0px !important;float:left;padding-top:0px;" class="checkbox">
+                                        <span><div class="checker" id="uniform-optionsCheckbox-5"><span><input type="checkbox" id="optionsCheckbox-5" value="option5"></span></div></span>
+                                        Video Conference
+                                    </label>
+                                    <label style="padding-left:0px !important;float:left;padding-top:0px;" class="checkbox">
+                                        <span><div class="checker" id="uniform-optionsCheckbox-6"><span><input type="checkbox" id="optionsCheckbox-6" value="option5"></span></div></span>
+                                        Corp COMM
+                                    </label>
+
+                                </div>
+                            </div>
+                            <div class="control-group" id="radio-demo">
+                                <label class="control-label">Food Needed</label>
+                                <div class="controls">
+                                    <label style="padding-left:0px !important;float:left;" class="checkbox">
+                                        <div id="uniform-optionsCheckbox-7" class="checker"><span><div class="checker" id="uniform-optionsCheckbox-7"><span><input type="checkbox" id="optionsCheckbox-7" value="option5"></span></div></span></div>
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+
+                            <img style="position: absolute;margin-left: -10px;margin-top: 10px;" src="img/sidebar.png">
+                            <div style="padding-left:80px;">
+                                <h3>Promote Your Event</h3>
+                            </div>
+                            <div class="control-group">
+                                <label for="select01" class="control-label">Select list with search</label>
+                                <div class="controls">
+                                    <select class="span12 with-search" id="select01">
+                                        <option value="conventions">Conventions/Tradeshows/Expos</option>
+                                        <option value="endurance">Endurance</option>
+                                        <option value="fairs">Festivals/Fairs</option>
+                                        <option value="food">Food/Wine</option>
+                                        <option value="fundraisers">Fundraisers/Charities/Giving</option>
+                                        <option value="testing">Just Testing</option>
+                                        <option value="movies">Movies/Film</option>
+                                        <option value="music">Music/Concerts</option>
+                                        <option value="meetings">Networking/Clubs/Associations</option>
+                                        <option value="entertainment">Other Entertainment</option>
+                                        <option value="other">Other Events</option>
+                                        <option value="recreation">Outdoors/Recreation</option>
+                                        <option value="performances">Performing Arts</option>
+                                        <option value="religion">Religion/Spirituality</option>
+                                        <option value="reunions">Schools/Reunions/Alumni</option>
+                                        <option value="social">Social Events/Mixers</option>
+                                        <option value="sports">Sporting Events</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">Customize Web Address</label>
+                                <div class="controls">
+                                    <input type="text" style="width:200px" id="input08">.eventhub.com
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">Is this Event</label>
+                                <div class="controls">
+                                    <label style="padding-left:0px !important;float:left;padding-top:0px;" class="checkbox">
+                                        <div class="radio" id="uniform-optionsRadios1" style="padding-top:0px;"><span class="checked"><input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"></span></div>
+                                        Private
+                                    </label>
+                                    <label style="padding-left:0px !important;padding-top:0px;float:left;" class="checkbox">
+                                        <div class="radio" id="uniform-optionsRadios2" style="padding-top:0px;"><span><input type="radio" value="option1" id="optionsRadios2" name="optionsRadios"></span></div>
+                                        Public
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" for="input01">Do you want to Broadcast</label>
+                                <div class="controls">
+                                    <label style="padding-left:0px !important;float:left;" class="checkbox">
+                                        <div id="uniform-optionsCheckbox-13" class="checker"><span><div class="checker" id="uniform-optionsCheckbox-13"><span><input type="checkbox" id="optionsCheckbox-13" value="option5"></span></div></span></div>
+                                        Yes
+                                    </label>
+                                </div>
+                            </div>
+                            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="previewmodal modal hide fade" id="myModal">
+                                <div class="modal-header">
+                                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                    <h3 id="myModalLabel">Preview</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="img/Event.JPG">
+                                </div>
+                                <div class="modal-footer">
+                                    <button aria-hidden="true" data-dismiss="modal" class="btn">Close</button>
+                                </div>
+                            </div>
+                            <div class="form-actions">
+                                <button type="reset" class="btn medium btn-danger">
+                                    Save Draft
+                                </button>
+                                <button onclick="javascript:previewpage();" type="button" id="preview" class="preview btn medium btn-primary">
+                                    Preview
+                                </button>
+                                <input type="submit" class="btn medium btn-success">
+                            </div>
+
+                        </fieldset>
+                    </form>
+                </div>
+
+            </article>
+        </div>
+
+        <!-- end row-fluid -->
+    </section>
+    <!-- end widget grid -->
+</div>

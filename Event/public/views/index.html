@@ -1,0 +1,78 @@
+<section data-ng-controller="IndexController" data-ng-init="find()" tiles>
+    <div class="home-template clearfix">
+        <div class="search-bar">
+            <form class="form-inline" role="form">
+                <div class="form-group event-search-wrap">
+                    <label class="sr-only" for="searchevents">All Events</label>
+                    <input type="search"   class="form-control event-search " id="searchevents" placeholder="All Events">
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+
+            </form>
+            <div id="header-layout-toggle" class="clearfix">
+                <div id="header-layout-smart" class="dev-template" data-toggle="tooltip" data-placement="bottom" title="Popular"></div>
+                <div id="header-layout-grid" class="dev-template" data-toggle="tooltip" data-placement="bottom" title="Event Date"></div>
+                <div id="header-layout-zoom" class="selected dev-template" data-toggle="tooltip" data-placement="bottom" title="Create Date"></div>
+            </div>
+        </div>
+        <div class="tile-container clearfix">
+            <div id="sample2-grid" class="grid clearfix"></div>
+        </div>
+    </div>
+
+    <div class="ev-modal-parent" data-ng-controller="EventDetailController"  ng-class="eventDetails('showdetails')">
+
+        <div  class="ev-modal-header-container">
+            <div class="ev-modal-header-content">
+                <div class="ev-modal-header">
+                    <div  class="ev-modal-close ev-modal-header-button">
+                        <!--<i class="close glyphicon glyphicon-remove"></i>-->
+                        <a href="#!/events" class="ev-modal-close-icon glyphicon glyphicon-remove"></a>
+                    </div>
+                    <div  class="ev-modal-header-button prev-button">
+                        <!--<i class="icon-leftthin white"></i>-->
+                        <a data-ng-show="previousevent._id" href="#!/events/{{previousevent._id}}" class="ev-modal-prev-icon glyphicon glyphicon-chevron-left"></a>
+                    </div>
+                    <div class="ev-modal-header-button next-button">
+                        <!--<i class="icon-rightthin white"></i>-->
+                        <a data-ng-show="nextevent._id" href="#!/events/{{nextevent._id}}" class="ev-modal-next-icon glyphicon glyphicon-chevron-right"></a>
+                    </div>
+                    <h2 class="ev-modal-topbar_title">
+                      <span class="ellipsis" >
+                        Popular Science
+                      </span>
+                    </h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="ev-modal-sidenav" style="left: 288px;">
+            <div class="ev-modal-sidebar border-box abs"></div>
+            <div id="draglist-shadow"></div>
+        </div>
+        <div  class="ev-modal-container">
+            <div  class="ev-modal-content">
+                <div  class="ev-modal-content-frame" >
+                    <div >
+                        <img class="eventimg" ng-show="eventdetail._id" ng-src="{{eventdetail.imageUrl || 'img/icons/logo.png'}}"  />
+                        <h1 class="title" ng-show="eventdetail._id">{{eventdetail.title}}</h1>
+                        <h2 class="author" ng-show="eventdetail._id">by {{eventdetail.user.name}} | on {{eventdetail.startDate}}</h2>
+
+                        <ng-frame resize-iframe class="frame-cls" ng-show="eventdetail._id">
+                            <div ng-bind-html-unsafe="eventdetail.eventTemplate" id="test"></div>
+                        </ng-frame>
+                        <div ng-hide="eventdetail._id">Loading...</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $('.dev-template').hover().tooltip()
+</script>
+
+
+
+

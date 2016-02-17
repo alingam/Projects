@@ -1,0 +1,63 @@
+<div class="slide-menu" data-ng-controller="NavigationController" ng-class="navClass('contact', 'hide-sub')">
+    <ol class="menu-container">
+        <li class="main-nav">Event</li>
+        <ol class="sub-nav event-nav " ng-class="navClass('events', 'active-sub')" data-sub-menu="event">
+            <li class="event-nav" ng-class="subnavClass('')">
+
+                <a href="#!/events" title="Upcoming Events">
+                   <div class="sub-nav-text" >Upcoming</div>
+                    <div style="position: absolute;width: 2px;"></div>
+                </a>
+
+            </li>
+            <li  class="create-nav" ng-class="subnavClass('create')">
+                <a href="#!/events/create" title="Create Events">
+                    <div class="sub-nav-text">Create</div>
+                </a>
+            </li>
+            <li class="calendarview-nav"  ng-class="subnavClass('calendar')">
+                <a href="#!/events/calendar" title="Calendar">
+                    <div class="sub-nav-text">Calendar</div>
+                </a>
+            </li>
+            <li class="suggested-nav"  ng-class="subnavClass('suggested')">
+                <a href="#!/events/suggested" title="Suggested">
+                    <div class="sub-nav-text">Suggested</div>
+                </a>
+            </li>
+            <li class="suggested-nav"  ng-class="subnavClass('archived-videos')">
+                <a href="#!/events/archived-videos" title="Archived Videos">
+                    <div class="sub-nav-text">Videos</div>
+                </a>
+            </li>
+
+        </ol>
+
+        <li class="main-nav">Broadcast</li>
+        <ol class="sub-nav broadcast-nav" ng-class="navClass('broadcast', 'active-sub')" data-sub-menu="broadcast">
+            <li class="create-nav" ng-class="subnavClass('broad1')">
+                <a href="#!/broadcast/broad1" title="Create">
+                    <div class="sub-nav-text">Broad1</div>
+                </a>
+            </li>
+            <li class="create-nav" ng-class="subnavClass('broad2')">
+                <a href="#!/broadcast/broad2" title="Create">
+                    <div class="sub-nav-text">Broad2</div>
+                </a>
+            </li>
+        </ol>
+        <li class="main-nav">Meetup</li>
+        <ol class="sub-nav meetup-nav" ng-class="navClass('meetup', 'active-sub')" data-sub-menu="meetup">
+            <li class="create-nav" ng-class="subnavClass('meetup1')">
+                <a href="#!/meetup/meetup1" title="Create">
+                    <div class="sub-nav-text">Meetup1</div>
+                </a>
+            </li>
+            <li class="create-nav" ng-class="subnavClass('meetup2')">
+                <a href="#!/meetup/meetup2" title="Create">
+                    <div class="sub-nav-text">Meetup2</div>
+                </a>
+            </li>
+        </ol>
+    </ol>
+</div>

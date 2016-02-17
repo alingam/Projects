@@ -1,0 +1,250 @@
+<div class="container createevent"  data-ng-controller="EventsController">
+    <div class="bann bannerimage1 clearfix">
+        <img class="banner" src="img/eventbanner.png" usemap="#Map1" border="0">
+        <map name="Mapimg" id="Map1">
+            <area shape="rect" coords="5,-2,394,118" href="javascript:void(0);" onclick="'javascript:interested()'" />
+        </map>
+    </div>
+    <div class="bann bannerimage2 clearfix">
+        <img class="banner" src="img/eventbanner.png" usemap="#Map2" border="0">
+        <map name="Mapimg1" id="Map2">
+            <area shape="rect" coords="393,-1,783,117" href="javascript:void(0);" onclick="'javascript:interested()'" />
+        </map>
+    </div>
+    <div class="bann bannerimage3 clearfix">
+        <img class="banner" src="img/eventbanner.png" usemap="#Map3" border="0">
+        <map name="Mapimg2" id="Map3">
+            <area shape="rect" coords="785,0,1171,117" href="javascript:void(0);"  onclick="'javascript:interested()'" />
+        </map>
+    </div>
+    <section class="widget-grid">
+        <div class="row createrow" >
+            <div>
+                <img class="sidebar"  src="img/sidebar.png">
+                <h3>Add Your Event Details</h3>
+            </div>
+            <form class="form-horizontal" role="form" data-ng-submit="create()">
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Your Event URL:</label>
+                    <div class="col-lg-6">
+                        <div class="webtext">www.eventhub.com/521e903e1b33c7581f000001</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="title" class="col-lg-2 control-label">Title</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" data-ng-model="title" id="title" placeholder="Enter event title">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-lg-2 control-label">When</label>
+                    <div class="col-lg-10">
+                        <div id="startdate" class="datepick input-append">
+                            <input class="datetime" id="sDate" ng-model="startDate" data-format="yyyy-MM-dd" placeholder="YYYY-MM-DD" type="text">
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                        <div id="starttime" class="timepick input-append">
+                            <input class="datetime" id="sTime" data-ng-model="startTime" data-format="hh:mm:ss" placeholder="HH:MM:SS" type="text">
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                        <div id="enddate" class="datepick input-append">
+                            <input class="datetime" id="eDate" data-ng-model="endDate" data-format="yyyy-MM-dd" placeholder="YYYY-MM-DD" type="text">
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                        <div id="endtime" class="timepick input-append">
+                            <input class="datetime" id="eTime" data-ng-model="endTime" data-format="hh:mm:ss"  placeholder="HH:MM:SS" type="text">
+                            <span class="add-on">
+                              <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+                              </i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Where</label>
+                    <div>
+                    <div class="col-lg-10">
+                        <label for="venue" class="col-lg-0 control-label">Venue</label>
+                        <input type="text" data-ng-model="venue" class="form-control" id="venue" placeholder="Venue of the event">
+                    </div>
+                    <div class="col-lg-10 sub">
+                        <label for="location" class="col-lg-0 control-label">Location</label>
+                        <input type="text" data-ng-model="location" class="form-control" id="location" placeholder="Location of the event">
+                    </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description" class="col-lg-2 control-label">Description</label>
+                    <div class="col-lg-10">
+                        <textarea type="text" data-ng-model="description" class="form-control" id="description" placeholder="Description of the event"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="image" class="col-lg-2 control-label">Upload Image</label>
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-new thumbnail" style="width: 50px; height: 50px;"><img src="img/placeholder.gif" /></div>
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="width: 50px; height: 50px;"></div>
+                        <span class="btn btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" ng-file-select="onFileSelect($files)" id="image" /></span>
+                        <a href="#" class="btn fileupload-exists" style="color:#0076d0" data-dismiss="fileupload">Remove</a>
+                    </div>
+                </div>
+                <div>
+                    <img class="sidebar"  src="img/sidebar.png">
+                    <h3>Choose Event Template</h3>
+                </div>
+                <div class="form-group">
+                    <label  class="col-lg-2 control-label">Select Available Templates</label>
+                    <div class="templates col-lg-2">
+                        <img src="img/template1.png">
+                    </div>
+                    <div class="templates col-lg-2">
+                        <img src="img/template2.png">
+                    </div>
+                    <div class="templates col-lg-2">
+                        <img src="img/template3.png">
+                    </div>
+                    <div class="templates col-lg-2">
+                        <img src="img/template4.png">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-lg-2 control-label">Create your own Template</label>
+                    <div class="col-lg-10">
+                        <textarea id="editor1">
+                        </textarea>
+                    </div>
+                </div>
+                <div>
+                    <img class="sidebar"  src="img/sidebar.png">
+                    <h3>Promote Your Event</h3>
+                </div>
+                <div class="form-group">
+                    <label for="categorylist" class="col-lg-2 control-label">Event Type</label>
+                    <div class="col-lg-6">
+                        <select class="form-control" name="category" id="categorylist">
+                            <option></option>
+                            <option value="01">Ceremony</option>
+                            <option value="02">Concert</option>
+                            <option value="03">Conference</option>
+                            <option value="04">Debate</option>
+                            <option value="05">Dining</option>
+                            <option value="06">Lecture</option>
+                        </select>
+                     </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Is this Event</label>
+                    <div class="col-lg-10">
+                        <div class="input-group col-lg-2">
+                              <span class="input-group-addon">
+                                <input type="radio" value="private" data-ng-model="eventType" id="private">
+                              </span>
+                            <label for="private" class="control-label">Private</label>
+                        </div>
+                        <div class="input-group col-lg-2">
+                              <span class="input-group-addon">
+                                <input type="radio" value="public" data-ng-model="eventType" id="public">
+                              </span>
+                            <label for="public" class="control-label">Public</label>
+                        </div>
+                    </div>
+                 </div>
+                <div class="form-group">
+                    <label for="audience" class="col-lg-2 control-label">Target Audience</label>
+                    <div class="col-lg-6">
+                        <input type="text" data-ng-model="audience" style="float:left;" class="form-control web" id="audience" placeholder="Target audience">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Send Invite as</label>
+                    <div class="col-lg-10">
+                        <div class="input-group col-lg-3">
+                              <span class="input-group-addon">
+                                <input  class="support" type="radio" id="email" value="email">
+                              </span>
+                            <label for="email" class="control-label">Email</label>
+                        </div>
+                        <div class="input-group col-lg-3">
+                              <span class="input-group-addon">
+                                <input  class="support" type="radio" id="calendar" value="calendar">
+                              </span>
+                            <label for="calendar" class="control-label">Calendar</label>
+                        </div>
+                        <div class="input-group col-lg-3">
+                              <span class="input-group-addon">
+                                <input  class="support" type="radio" id="none" value="none">
+                              </span>
+                            <label for="none" class="control-label">None</label>
+                        </div>
+                        <!-- /input-group -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-2 control-label">Support Needed</label>
+                    <div class="col-lg-10">
+                        <div class="input-group col-lg-3">
+                              <span class="input-group-addon">
+                                <input class="support" type="checkbox"  id="broadcast" value="broadcast">
+                              </span>
+                            <label for="broadcast" class="control-label">Event Broadcast</label>
+                        </div>
+                        <div class="input-group col-lg-3">
+                              <span class="input-group-addon">
+                                <input class="support" type="checkbox"  id="checkin" value="checkin">
+                              </span>
+                            <label for="checkin" class="control-label">Event Check-In</label>
+                        </div>
+                        <div class="input-group col-lg-3">
+                              <span class="input-group-addon">
+                                <input class="support" type="checkbox"  id="jam" value="jam">
+                              </span>
+                            <label for="jam" class="control-label">Live Jam</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="reset" class="btn large btn-save">
+                        Save
+                    </button>
+                    <button onclick="javascript:previewpage();" type="button" id="preview" class="preview btn large btn-preview">
+                        Preview
+                    </button>
+                    <input type="submit" class="btn large btn-blue">
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+</div>
+<script>
+    var editor, html = '';
+    var date = new Date();
+    date.setDate(date.getDate());
+    $(function(){
+        CKEDITOR.replace('editor1')
+        $('.datepick').datetimepicker({
+            pickTime: false,
+            startDate: date
+        });
+        $('.timepick').datetimepicker({
+            pickDate: false,
+            pick12HourFormat: true
+        });
+    });
+    $(document).ready(function(){
+       $('.bannerimage2').hide();
+        $('.bannerimage3').hide();
+    })
+
+</script>

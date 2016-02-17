@@ -1,0 +1,39 @@
+<div class="navbar navbar-inverse navbar-fixed-top" data-ng-controller="NavigationController">
+    <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" title="EventHub" href="/"></a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="event-main" ng-class="navClass('events', 'active')" data-menu="event">
+                    <a href="#!/events" title="Event">
+                        <div class="main-nav-icon" style="background-position: 0px 0px;"></div>
+                        <div class="main-nav-text">Event</div>
+                    </a>
+                </li>
+                <li class="broadcast-main" ng-class="navClass('broadcast', 'active')" data-menu="broadcast">
+                    <a href="#!/broadcast" title="Broadcast">
+                        <div class="main-nav-icon" style="background-position: 0px 0px;"></div>
+                        <div class="main-nav-text">Live TV</div>
+                    </a>
+                </li>
+                <li class="meetup-main" ng-class="navClass('meetup', 'active')" data-menu="meetup">
+                    <a href="#!/meetup" title="Meetup">
+                        <div class="main-nav-icon" style="background-position: 0px 0px;"></div>
+                        <div class="main-nav-text">Meetup</div>
+                    </a>
+                </li>
+                <li class="contact-main" ng-class="navClass('contact', 'active')">
+                    <a href="#!/contact" title="Contact">
+                        <div class="main-nav-icon" style="background-position: 0px 0px;"></div>
+                        <div class="main-nav-text">Contact</div>
+                    </a>
+                </li>
+
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>

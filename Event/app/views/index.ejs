@@ -1,0 +1,21 @@
+<% include includes/header.ejs %>
+
+<div class="main" data-ng-controller="NavigationController">
+    <% include includes/slide_nav.ejs %>
+    <!--<div class="banner-container">
+        <div class="banner"></div>
+    </div>-->
+    <div class="content-container" ng-class="navClass('contact', 'container-left')" >
+        <% include includes/header_nav.ejs %>
+        <section id="recent" data-ng-view>
+        </section>
+
+
+    </div>
+
+</div><!-- /.container -->
+
+
+<% include includes/footer.ejs %>
+
+
