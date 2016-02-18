@@ -6,18 +6,19 @@
   
 
   <script src="../bower_components/angular/angular.min.js"></script>
-  <script src="mainController.js"></script>
-  <script src="mainService.js"></script>
+  <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="main.js"></script>
+  <script src="sampleController.js"></script>
+  <script src="sampleService.js"></script>
   
 
   
 </head>
 <body ng-app="sampleApp">
-	<div ng-controller="mainController">
+	<div ng-controller="sampleController">
 		<h1>{{firstTab}}</h1>
 		<h1>{{secondTab}}</h1>
 		<h4>{{sayHello}}</h4>
-		<h4>{{sayGoodBye}}</h4>
 	</div>
 </body>
 </html>

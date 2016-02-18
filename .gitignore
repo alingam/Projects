@@ -34,3 +34,4 @@ node_modules
 
 EventHub/node_modules
 EventHub/public/lib/*
+angularjs/bower_components

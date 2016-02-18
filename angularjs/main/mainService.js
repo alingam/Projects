@@ -1,7 +1,7 @@
-(function(){
+(function(angular){
 /* use strict */
-var sampleService = angular.module('mainService', [])
-sampleService.factory('displayService', function() {
+var services = angular.module('services', [])
+services.factory('displayService', function() {
   var displayHello = function(){
   	console.log("Inside display hello function of service");
   	return "Hello"
@@ -18,5 +18,5 @@ sampleService.factory('displayService', function() {
   };
 });
 
-})();
+})(window.angular);
 
